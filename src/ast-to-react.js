@@ -207,7 +207,7 @@ function assignDefined(target, attrs) {
 
 function mergeNodeChildren(node, parsedChildren) {
   const el = node.element
-  if (Array.isArray(el)) {
+  if (Array.isArray(el) || !el) {
     const Fragment = React.Fragment || 'div'
     return React.createElement(Fragment, null, el)
   }
